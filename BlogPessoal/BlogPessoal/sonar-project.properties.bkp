@@ -1,0 +1,9 @@
+sonar.projectKey=blog-pessoal-dotnet
+sonar.projectName=Blog Pessoal Backend ASP.NET Core
+sonar.host.url=http://localhost:9000
+sonar.login=${SONAR_TOKEN}
+sonar.sourceEncoding=UTF-8
+sonar.sources=.
+sonar.exclusions=**/bin/**,**/obj/**,**/Migrations/**,**/*.json
+sonar.tests=BlogPessoal.Tests
+sonar.cs.opencover.reportsPaths=coverage/**/coverage.opencover.xml

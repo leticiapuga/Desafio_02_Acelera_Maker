@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "Blog Pessoal ASP.NET Core",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:5001"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Cadastrar usuário",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/usuarios/cadastrar",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Letícia Silva\",\n  \"email\": \"leticia@email.com\",\n  \"senha\": \"Senha123\",\n  \"foto\": \"https://exemplo.com/foto.png\",\n  \"tipo\": \"USUARIO\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/usuarios/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"leticia@email.com\",\n  \"senha\": \"Senha123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Criar tema",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/temas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"descricao\": \"Tecnologia\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Criar postagem com IA",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/postagens",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Boas práticas em APIs REST\",\n  \"conteudo\": \"APIs RESTful bem planejadas facilitam manutenção, integração entre sistemas e evolução dos produtos digitais.\",\n  \"temaId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "Resumir texto com IA",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/ia/resumir",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"texto\": \"APIs RESTful bem planejadas facilitam manutenção, integração entre sistemas e evolução dos produtos digitais.\"\n}"
+        }
+      }
+    }
+  ]
+}
